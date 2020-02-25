@@ -11,6 +11,8 @@ services:
     - '127.0.0.1:4080:4080'
     env_file:
     - omero.prod.env
+    volumes:
+    - './var:/opt/omero/web/OMERO.web/var/'
   postgres:
     image: postgres:9.6.17
     environment:
