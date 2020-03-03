@@ -3,7 +3,7 @@ services:
   omeroserver:
     ports:
     - '127.0.0.1:4063:4063'
-    - '127.0.0.1:4064:4064'
+    - '4064:4064'
     env_file:
     - omero.prod.env
   omeroweb:
