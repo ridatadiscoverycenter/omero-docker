@@ -13,7 +13,7 @@ services:
     - omero.prod.env
     volumes:
     - './var:/opt/omero/web/OMERO.web/var/'
-    - '/isolon_omero:/OMERO'
+    - '/isilon_omero/omero/omerotest:/OMERO'
   postgres:
     image: postgres:9.6.17
     environment:
