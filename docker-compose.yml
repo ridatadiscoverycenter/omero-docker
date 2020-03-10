@@ -3,6 +3,6 @@ services:
   omeroserver:
     image: openmicroscopy/omero-server:5.6.0
   omeroweb:
-    image: openmicroscopy/omero-web:5.6.0
+    image: openmicroscopy/omero-web-standalone:5.6.0
     environment:
       OMEROHOST: omeroserver

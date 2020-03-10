@@ -1,20 +1,16 @@
 version: '3.6'
 services:
   omeroserver:
-    image: openmicroscopy/omero-server:5.6.0
     ports:
     - '4063:4063'
     - '4064:4064'
     env_file:
     - omero.dev.env
   omeroweb:
-    image: openmicroscopy/omero-web:5.6.0
     ports:
     - '4080:4080'
     env_file:
     - omero.dev.env
-    environment:
-      OMEROHOST: omeroserver
   postgres:
     image: postgres:9.6.17
     environment:
