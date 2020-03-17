@@ -15,7 +15,6 @@ services:
     - omero.prod.env
     volumes:
     - './var-web:/opt/omero/web/OMERO.web/var/'
-    - './config-web:/opt/omero/web/config/'
   postgres:
     image: postgres:9.6.17
     environment:
