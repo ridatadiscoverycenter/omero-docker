@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-OMERO_WEB_EXEC='docker-compose exec omeroweb /opt/omero/web/OMERO.web/bin/omero'
+OMERO_WEB_EXEC='docker-compose exec -T omeroweb /opt/omero/web/OMERO.web/bin/omero'
 
 fpbioimage() {
   if ${OMERO_WEB_EXEC} config get omero.web.apps | grep -q "omero_fpbioimage"; then
