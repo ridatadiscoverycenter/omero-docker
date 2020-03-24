@@ -6,7 +6,7 @@ services:
     env_file:
     - omero.prod.env
     volumes:
-    - '/isilon_omero/omero/omerotest:/OMERO'
+    - '/hybrid_omero/omero:/OMERO'
     - './var-server:/opt/omero/web/OMERO.server/var/'
   omeroweb:
     ports:
@@ -15,11 +15,3 @@ services:
     - omero.prod.env
     volumes:
     - './var-web:/opt/omero/web/OMERO.web/var/'
-  postgres:
-    image: postgres:9.6.17
-    environment:
-      POSTGRES_PASSWORD: omero
-      POSTGRES_USER: omero
-      POSTGRES_DB: omero
-    volumes:
-    - './data:/var/lib/postgresql/data'
