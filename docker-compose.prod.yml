@@ -7,11 +7,11 @@ services:
     - omero.prod.env
     volumes:
     - '/hybrid_omero/omero:/OMERO'
-    - './var-server:/opt/omero/web/OMERO.server/var-server/'
+    - './var-server:/opt/omero/web/OMERO.server/var/'
   omeroweb:
     ports:
     - '127.0.0.1:4080:4080'
     env_file:
     - omero.prod.env
     volumes:
-    - './var-web:/opt/omero/web/OMERO.web/var-web/'
+    - './var-web:/opt/omero/web/OMERO.web/var/'
