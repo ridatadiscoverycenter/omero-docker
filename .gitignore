@@ -1,3 +1,4 @@
 data/
 var-*/
+etc-*/
 omero.prod.env
