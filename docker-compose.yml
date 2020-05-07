@@ -1,7 +1,15 @@
 version: '3.6'
 services:
   omeroserver:
-    image: openmicroscopy/omero-server:5.6.1
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+      args:
+        - "LDAP_URL=${LDAP_URL}"
+        - "LDAP_BASE_DN=${LDAP_BASE_DN}"
+        - "LDAP_USERNAME=${LDAP_USERNAME}"
+        - "LDAP_PASSWORD=${LDAP_PASSWORD}"
+        - "LDAP_USER_MAPPING=${LDAP_USER_MAPPING}"
   omeroweb:
     image: openmicroscopy/omero-web-standalone:5.6.3
     environment:
