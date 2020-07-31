@@ -6,7 +6,7 @@ services:
     env_file:
     - omero.prod.env
     volumes:
-    - '/data:/OMERO'
+    - '/isilon-omero:/OMERO'
     - './var-server:/opt/omero/server/OMERO.server/var/'
   omeroweb:
     ports:
