@@ -15,6 +15,8 @@ USER root
 RUN source /opt/omero/server/venv3/bin/activate \
     && pip install omero-certificates
 
+RUN yum install -y postgresql12 && yum clean all
+
 
 # NOTE(BNR): For whatever lucky reason, we can set config values via the
 #            interactive script at build time even if omero isn't running. We
