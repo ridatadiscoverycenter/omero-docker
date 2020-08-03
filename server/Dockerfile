@@ -17,6 +17,8 @@ RUN source /opt/omero/server/venv3/bin/activate \
 
 RUN yum install -y postgresql12 && yum clean all
 
+RUN echo "%omero-server ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
 
 # NOTE(BNR): For whatever lucky reason, we can set config values via the
 #            interactive script at build time even if omero isn't running. We
@@ -24,6 +26,9 @@ RUN yum install -y postgresql12 && yum clean all
 #            mount special config directories, or config after the container
 #            has started.
 USER omero-server
+
+COPY 98-permissions.sh /startup/98-permissions.sh
+
 RUN mkdir -p "${CERTS_DIR}" \
     && "${OMERO}" config set omero.glacier2.IceSSL.DefaultDir "${CERTS_DIR}" \
     && "${OMERO}" certificates
