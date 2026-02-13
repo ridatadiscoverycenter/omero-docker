@@ -1,4 +1,4 @@
-# Omero Docker
+# Omero Docker     ![Static Badge](https://img.shields.io/badge/ARCHIVED-red)
 
 ## **Archived February 2026 as OMERO is no longer in service**
 
